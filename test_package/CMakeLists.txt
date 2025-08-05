@@ -48,6 +48,7 @@ conan_define_targets()
 
 add_executable(${TARGET_NAME} main.cpp)
 target_link_libraries(${TARGET_NAME} CONAN_PKG::${PACKAGE_NAME})
+target_compile_features(${TARGET_NAME} PRIVATE cxx_std_17)
 
 # On different OS the path is different, so we make path the same.
 set_target_properties(${TARGET_NAME} PROPERTIES
